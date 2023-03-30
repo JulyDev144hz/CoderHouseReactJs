@@ -1,0 +1,29 @@
+.mainPage {
+
+}
+
+.landingPage {
+  position: relative;
+  background: rgba(179, 2, 2, 0.795);
+  height: 100vh;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  /* filter: drop-shadow(0 0 5px #000); */
+}
+
+.landingPage img {
+  z-index: 2;
+  filter: drop-shadow(0 0 15px #5c0808);
+}
+
+.divisorLanding {
+  position: absolute;
+  background: #241616ec;
+  content: "";
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  clip-path: polygon(40% 0, 100% 0%, 100% 100%, 75% 100%);
+}
