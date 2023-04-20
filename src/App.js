@@ -1,31 +1,29 @@
 import './App.css';
 import NavBar from './components/NavBar/NavBar';
 import 'materialize-css/dist/css/materialize.min.css';
+
+
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+
+import LandingPage from './views/LandingPage';
 import ItemListContainer from './components/ItemListContainer/ItemListContainer';
-import jordan from './imgs/jordan.webp'
+import ItemDetail from './views/ItemDetail';
+
+import {routes} from './routes'
 
 function App() {
   return (
-    <>
+    <Router>
+      <NavBar />
+      <Routes>
+        <Route path={routes.root} element={<LandingPage />}></Route>
+        <Route path={routes.catalogue} element={<ItemListContainer />}></Route>
+        <Route path={routes.category} element={<ItemListContainer />}></Route>
+        <Route path={routes.productDetail} element={<ItemDetail />}></Route>
+      </Routes>
 
-      <main className='mainPage'>
-
-        <div className="landingPage">
-        <NavBar />
-          <h1 className='white-text center-align' style={{fontSize: 120}}>Sneaker Society</h1>
-          <img src={jordan} alt="" className='responsive-img' />
-          <div className="divisorLanding">
-          </div>
-
-        </div>
-        <div className='container'>
-
-          
-        <ItemListContainer item="Prop de itemlistContainer" />
-        </div>
-
-      </main>
-    </>
+      
+    </Router>
   );
 }
 

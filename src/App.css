@@ -1,5 +1,5 @@
-.mainPage {
-
+*{
+  scroll-behavior: smooth;
 }
 
 .landingPage {
@@ -26,4 +26,84 @@
   top: 0;
   bottom: 0;
   clip-path: polygon(40% 0, 100% 0%, 100% 100%, 75% 100%);
+}
+
+
+.cardItemComponent{
+  height: 440px;
+  box-shadow: 0 0 5px #000;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 20px;
+  transition: scale 1s;
+  background: #fff;
+  margin: 20px;
+}
+.cardItemComponent:hover{
+  position: relative;
+  scale: 1.2;
+  z-index: 5;
+  cursor: pointer;
+}
+.cardItemComponent img{
+  height: 360px;
+}
+
+
+.productDetail{
+  min-height: 100vh;
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  grid-template-columns: 1fr 1fr;
+}
+.productDetail img{
+  height: 600px;
+}
+
+.productDetail .productDetailInformation{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.productDetail .productDetailInformation h2{
+  text-shadow: 0 0 5px #000;
+  font-size: 5rem;
+}
+.productDetail .productDetailInformation p{
+  color: #747474;
+  font-size: 1.4rem;
+}
+.productDetail .productDetailInformation .productDetailPrice{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.productDetail .productDetailInformation .productDetailPrice span:first-child{
+  color: rgb(0, 131, 0);
+  font-size: 3rem;
+  text-shadow: 0 0 5px rgb(0, 199, 0);
+}
+.productDetail .productDetailInformation .productDetailPrice span:last-child{
+  color: #6e6e6e;
+  font-size: 2.4rem;
+}
+.productDetail .productDetailInformation button{
+
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  outline: none;
+  border: none;
+  color: white;
+  background: #019e1b;
+  margin: auto;
+  font-size: 2.4rem;
+  transition: .2s;
+}
+.productDetail .productDetailInformation button:hover{
+  box-shadow: 0 0 5px #02c222;
+  scale: 1.2;
+  cursor: pointer;
 }
