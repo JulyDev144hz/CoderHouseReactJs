@@ -33,13 +33,13 @@ function ItemListContainer() {
             if (idCategory === "1") {
               if (e.category === "men's clothing") {
                 return (
-                  <ItemComponent id={e.id} title={e.title} description={e.description} price={e.price} img={e.image} />
+                  <ItemComponent item={e} />
                 )
               }
             } else if (idCategory === "2") {
               if (e.category === "women's clothing") {
                 return (
-                  <ItemComponent id={e.id} title={e.title} description={e.description} price={e.price} img={e.image} />
+                  <ItemComponent item={e} />
                 )
               }
             }
@@ -47,7 +47,7 @@ function ItemListContainer() {
             else {
               if (e.category === "men's clothing" || e.category === "women's clothing") {
                 return (
-                  <ItemComponent id={e.id} title={e.title} description={e.description} price={e.price} img={e.image} />
+                  <ItemComponent item={e} />
                 )
               }
             }

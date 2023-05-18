@@ -3,4 +3,5 @@ export const routes = {
     catalogue : "/catalogo",
     category : "/catalogo/:idCategory",
     productDetail : "/producto/:idProduct",
+    cart : "/cart",
 }
