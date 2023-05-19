@@ -10,7 +10,7 @@ function CartView() {
     <div className="cartView">
       <h1>CartView</h1>
       <div className="container">
-        <div className="row" style={{ height: "100vh" }}>
+        <div className="row">
           {cart
             ? cart.map((e) => {
                 return (

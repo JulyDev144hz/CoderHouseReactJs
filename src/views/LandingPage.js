@@ -8,7 +8,7 @@ function LandingPage() {
         <main className='mainPage'>
 
             <div className="landingPage">
-                <h1 className='white-text center-align' style={{ fontSize: 120 }}>Sneaker Society</h1>
+                <h1 className='white-text center-align'>Sneaker Society</h1>
                 <img src={jordan} alt="" className='responsive-img' />
                 <div className="divisorLanding">
                 </div>

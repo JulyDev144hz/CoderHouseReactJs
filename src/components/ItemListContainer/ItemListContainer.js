@@ -20,7 +20,7 @@ function ItemListContainer() {
 
   return (
     <div className="container">
-      <div className='row' style={{ height: "100vh" }}>
+      <div className='row'>
         <br />
         <br />
         <br />
