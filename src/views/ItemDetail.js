@@ -5,6 +5,7 @@ import { useState } from "react";
 
 import { useContext } from "react";
 import CartContext from "../context/CartContext";
+import useFirestore from "../utils/useFirestore";
 
 function ItemDetail() {
   const { idProduct } = useParams();
@@ -15,14 +16,20 @@ function ItemDetail() {
   const addItem = () => {
     addToCart(product);
   };
+  const nameCollection = "items";
+  const documentId = "hMoNFraRKdLEkhE6fM4k";
 
+  const [data, loading] = useFirestore({ nameCollection, documentId });
   useEffect(() => {
-    return () => {
-      fetch(`https://fakestoreapi.com/products/${idProduct}`)
-        .then((r) => r.json())
-        .then((data) => setProduct(data));
-    };
-  }, [idProduct]);
+    if (!loading) {
+      data.map((i) => {
+        if (parseInt(i.id) === parseInt(idProduct)) {
+          setProduct(i);
+        }
+        return ''
+      });
+    }
+  }, [!loading]);
 
   return (
     <div className="productDetail">

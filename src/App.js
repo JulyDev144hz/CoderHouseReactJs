@@ -16,39 +16,28 @@ import CartView from "./views/CartView";
 
 function App() {
   const [cart, setCart] = useState([]);
-  const [totalCart, setTotalCart] = useState(0);
-
-
 
   const addToCart = (item) => {
-    setTotalCart(totalCart+1)
-    let coincidencias = cart.filter((i) => i.id === item.id);
-    try{
-      cart[cart.indexOf(coincidencias[0])].count = coincidencias[0].count + 1;
-      setCart(cart)
-    } catch {
-      item.count = 1
-      setCart([...cart, item]);
-    }
+    setCart([...cart, item]);
   };
   const removeFromCart = (id) => {
-    cart.map(i=>{
-      if(i.id===id){
-        i.count--
-        setTotalCart(totalCart-1)
-      }
+    console.log(id)
 
-      if(i.count==0){
-        setCart(cart.filter(_i=>!(_i.id===id)))
-        
-      }else{
-        setCart(cart)
+    let borradoUno = false;
+    let filtro = []
+    cart.map((i) => {
+      if(i.id!==id || (borradoUno && i.id===id)){
+        filtro.push(i)
+      }else if(i.id===id){
+        borradoUno = true
       }
-    })
+    });
+    setCart(filtro);
+
   };
 
   return (
-    <CartContext.Provider value={{ addToCart, cart, removeFromCart, totalCart}}>
+    <CartContext.Provider value={{ addToCart, cart, removeFromCart , setCart}}>
       <Router>
         <NavBar />
         <Routes>

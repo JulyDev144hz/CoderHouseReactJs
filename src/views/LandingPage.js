@@ -2,7 +2,6 @@ import React from 'react'
 
 import ItemListContainer from '../components/ItemListContainer/ItemListContainer';
 import jordan from '../imgs/jordan.webp'
-import NavBar from '../components/NavBar/NavBar';
 function LandingPage() {
     return (
         <main className='mainPage'>

@@ -1,15 +1,18 @@
 import React, { useEffect } from 'react'
 
-import useFetch from '../../utils/useFetch'
 
 import ItemComponent from '../ItemComponent/ItemComponent'
 import { useParams } from 'react-router-dom'
+import useFirestore from '../../utils/useFirestore'
 
 function ItemListContainer() {
 
   const {idCategory} = useParams()
 
-  const { data, loading } = useFetch("https://fakestoreapi.com/products")
+  const nameCollection = 'items'
+  const documentId = 'hMoNFraRKdLEkhE6fM4k'
+
+  const [data, loading ] = useFirestore({nameCollection,documentId})
 
   useEffect(() => {
 
